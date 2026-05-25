@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { MapPin, Search } from "lucide-react";
 import { useState, type FormEvent } from "react";
+import { RemoteImage } from "@/components/ui/RemoteImage";
+import { HERO_IMAGE } from "@/lib/images";
 
 export function HeroSection() {
   const router = useRouter();
@@ -20,13 +21,13 @@ export function HeroSection() {
   return (
     <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
-        <Image
-          src="https://images.unsplash.com/photo-1539224357482-132d73507204?auto=format&fit=crop&w=1920&q=80"
-          alt="Sri Lanka Landscapes"
+        <RemoteImage
+          src={HERO_IMAGE}
+          alt="Panoramic view of Sri Lankan temple and landscape at golden hour"
           fill
           priority
-          className="object-cover scale-105 animate-slow-pan"
           sizes="100vw"
+          className="object-cover scale-105 animate-slow-pan"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-stone-900/80 via-stone-900/40 to-stone-900/90" />
       </div>

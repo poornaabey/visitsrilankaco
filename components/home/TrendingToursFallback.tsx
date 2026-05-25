@@ -1,9 +1,6 @@
-import { TourCard } from "@/components/ui/TourCard";
-import { getTrendingTours } from "@/lib/data/get-tours";
+import { TourCardSkeletonGrid } from "@/components/ui/TourCardSkeleton";
 
-export async function TrendingToursSection() {
-  const tours = await getTrendingTours();
-
+export function TrendingToursFallback() {
   return (
     <section className="py-24 bg-white border-t border-stone-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,11 +12,7 @@ export async function TrendingToursSection() {
             Trending Experiences
           </h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          {tours.map((tour) => (
-            <TourCard key={tour.id} tour={tour} variant="home" />
-          ))}
-        </div>
+        <TourCardSkeletonGrid count={3} />
       </div>
     </section>
   );

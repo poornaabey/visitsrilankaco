@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { RemoteImage } from "@/components/ui/RemoteImage";
 import { REGIONS } from "@/lib/data/regions";
 
 export function DestinationsGrid() {
@@ -16,9 +16,9 @@ export function DestinationsGrid() {
             id={r.id}
             className="relative h-96 rounded-3xl overflow-hidden group shadow-sm hover:shadow-xl transition-shadow scroll-mt-32"
           >
-            <Image
+            <RemoteImage
               src={r.image}
-              alt={r.name}
+              alt={`${r.name} destination — ${r.desc}`}
               fill
               className="object-cover transition duration-700 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, 50vw"

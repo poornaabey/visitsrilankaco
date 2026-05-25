@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { RemoteImage } from "@/components/ui/RemoteImage";
 import { REGIONS } from "@/lib/data/regions";
 
 export function RegionsSection() {
@@ -29,15 +29,15 @@ export function RegionsSection() {
             key={region.id}
             className="group relative h-96 rounded-3xl overflow-hidden block shadow-sm hover:shadow-xl transition-shadow"
           >
-            <Image
+            <RemoteImage
               src={region.image}
-              alt={region.name}
+              alt={`${region.name} — ${region.desc}`}
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-110"
               sizes="(max-width: 768px) 100vw, 25vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/20 to-transparent" />
-            <div className="absolute bottom-8 left-6 right-6">
+            <div className="absolute bottom-8 left-6 right-6 z-10">
               <h3 className="text-white text-2xl font-serif font-bold mb-2">
                 {region.name}
               </h3>

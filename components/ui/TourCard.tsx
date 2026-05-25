@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Clock, MapPin, Star } from "lucide-react";
+import { RemoteImage } from "@/components/ui/RemoteImage";
 import { useApp } from "@/providers/AppProvider";
 import type { Tour } from "@/types/tour";
 import { cn } from "@/lib/cn";
@@ -28,20 +28,20 @@ export function TourCard({ tour, variant = "listing" }: TourCardProps) {
     >
       <div
         className={cn(
-          "relative overflow-hidden",
+          "relative overflow-hidden bg-stone-200",
           isHome ? "h-64" : "h-56",
         )}
       >
-        <Image
+        <RemoteImage
           src={tour.image}
-          alt={tour.title}
+          alt={`${tour.title} — ${tour.category} tour in ${tour.location}`}
           fill
-          className="object-cover group-hover:scale-105 transition duration-700"
           sizes="(max-width: 768px) 100vw, 33vw"
+          className="object-cover group-hover:scale-105 transition duration-700"
         />
         <div
           className={cn(
-            "absolute top-4 left-4 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider",
+            "absolute top-4 left-4 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider z-10",
             isHome
               ? "bg-white/95 backdrop-blur text-emerald-800"
               : "bg-stone-900/90 backdrop-blur text-white",

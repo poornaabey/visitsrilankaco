@@ -1,4 +1,7 @@
+import { REGION_IMAGES } from "@/lib/images";
 import type { Tour } from "@/types/tour";
+
+const P = "https://images.pexels.com/photos";
 
 export const TOURS: Tour[] = [
   {
@@ -13,11 +16,10 @@ export const TOURS: Tour[] = [
     price: 120,
     category: "Culture",
     expertId: "dr-senanayake",
-    image:
-      "https://images.unsplash.com/photo-1586220138973-199fbf7f45c2?auto=format&fit=crop&w=1200&q=80",
+    image: `${REGION_IMAGES["cultural-triangle"]}&h=1200`,
     gallery: [
-      "https://images.unsplash.com/photo-1539224357482-132d73507204?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1588168233777-6f61b7fcf711?auto=format&fit=crop&w=600&q=80",
+      `${P}/3601420/pexels-photo-3601420.jpeg?auto=compress&cs=tinysrgb&w=600`,
+      `${P}/2325447/pexels-photo-2325447.jpeg?auto=compress&cs=tinysrgb&w=600`,
     ],
     description:
       "Bypass the massive crowds with our expert historian. Discover ancient hydraulic engineering, marvel at the mirror wall, and enjoy a traditional village culinary experience post-climb.",
@@ -45,11 +47,10 @@ export const TOURS: Tour[] = [
     price: 250,
     category: "Wildlife",
     expertId: "ruwan-biologist",
-    image:
-      "https://images.unsplash.com/photo-1610486022838-8d4889c0b8de?auto=format&fit=crop&w=1200&q=80",
+    image: `${REGION_IMAGES["wildlife-parks"]}&h=1200`,
     gallery: [
-      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1539224357482-132d73507204?auto=format&fit=crop&w=600&q=80",
+      `${P}/631317/pexels-photo-631317.jpeg?auto=compress&cs=tinysrgb&w=600`,
+      `${P}/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&w=600`,
     ],
     description:
       "Venture deep into Block 1 & 5 of Yala National Park. Travel in a custom-modified 4x4 designed for wildlife photography, led by a biologist who tracks behavior rather than just chasing sightings.",
@@ -77,11 +78,10 @@ export const TOURS: Tour[] = [
     price: 1850,
     category: "Wellness",
     expertId: "dr-fernando",
-    image:
-      "https://images.unsplash.com/photo-1545389336-eaee230ef1e8?auto=format&fit=crop&w=1200&q=80",
+    image: `${P}/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=1200`,
     gallery: [
-      "https://images.unsplash.com/photo-1579690184232-f1730043c749?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1566324838663-8a38b556c5d1?auto=format&fit=crop&w=600&q=80",
+      `${REGION_IMAGES["southern-coast"]}&h=600`,
+      `${REGION_IMAGES["hill-country"]}&h=600`,
     ],
     description:
       "A complete mental and physical reset. Supervised by certified Ayurvedic doctors, this immersive retreat utilizes ancient dosha-specific therapies to rejuvenate your core system.",

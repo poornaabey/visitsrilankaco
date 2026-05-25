@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import { RemoteImage } from "@/components/ui/RemoteImage";
 import {
   Award,
   CheckCircle2,
@@ -24,9 +24,9 @@ export function TourDetailView({ tour }: TourDetailViewProps) {
   return (
     <div className="min-h-screen bg-stone-50 pb-24 animate-fade-in">
       <div className="relative h-[65vh] w-full">
-        <Image
+        <RemoteImage
           src={tour.image}
-          alt={tour.title}
+          alt={`${tour.title} — hero image, ${tour.location}`}
           fill
           priority
           className="object-cover"
@@ -106,9 +106,9 @@ export function TourDetailView({ tour }: TourDetailViewProps) {
             <div className="grid grid-cols-2 gap-4">
               {tour.gallery.map((img) => (
                 <div key={img} className="relative h-64 rounded-3xl overflow-hidden shadow-sm">
-                  <Image
+                  <RemoteImage
                     src={img}
-                    alt="Gallery"
+                    alt={`${tour.title} gallery photo`}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 50vw, 400px"
@@ -127,9 +127,9 @@ export function TourDetailView({ tour }: TourDetailViewProps) {
                 <Award className="w-32 h-32" />
               </div>
               <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-8">
-                <Image
+                <RemoteImage
                   src={expert.image}
-                  alt={expert.name}
+                  alt={`${expert.name}, ${expert.role}`}
                   width={96}
                   height={96}
                   className="w-24 h-24 rounded-full object-cover border-2 border-emerald-400"

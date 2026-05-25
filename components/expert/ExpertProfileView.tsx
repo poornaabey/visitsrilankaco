@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { RemoteImage } from "@/components/ui/RemoteImage";
 import { ArrowRight, Award, MapPin } from "lucide-react";
 import { getToursByExpert } from "@/lib/data/tours";
 import type { Expert } from "@/types/expert";
@@ -15,9 +15,9 @@ export function ExpertProfileView({ expert }: ExpertProfileViewProps) {
     <div className="min-h-screen pt-32 pb-24 bg-stone-50 animate-fade-in">
       <div className="max-w-5xl mx-auto px-4">
         <div className="bg-white rounded-[3rem] p-8 md:p-16 shadow-xl border border-stone-100 flex flex-col md:flex-row gap-12 items-center md:items-start mb-16">
-          <Image
+          <RemoteImage
             src={expert.image}
-            alt={expert.name}
+            alt={`Portrait of ${expert.name}, ${expert.role}`}
             width={256}
             height={256}
             className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-emerald-50 shadow-lg shrink-0"

@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { Calendar } from "lucide-react";
+import { RemoteImage } from "@/components/ui/RemoteImage";
 import { useApp } from "@/providers/AppProvider";
 import { getChildPrice } from "@/lib/currency";
 import type { CartItem, CheckoutUpsells } from "@/types/cart";
@@ -30,7 +30,7 @@ export function OrderSummary({ tour, cart, upsells }: OrderSummaryProps) {
       <h3 className="text-2xl font-bold text-stone-900 mb-8">Order Summary</h3>
       <div className="flex gap-4 mb-8 pb-8 border-b border-stone-100">
         <div className="relative w-24 h-24 rounded-2xl overflow-hidden shadow-sm shrink-0">
-          <Image
+          <RemoteImage
             src={tour.image}
             alt={tour.title}
             fill
